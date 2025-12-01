@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conditions | Ninja Motion Therapies</title>
+    <link rel="icon" type="image/png" href="images/image1.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { sans: ['Open Sans', 'sans-serif'], display: ['Poppins', 'sans-serif'] },
+            colors: { navy: { 950: '#0B1120', 900: '#111827' }, sky: { 500: '#0ea5e9', 600: '#0284c7' } }
+          }
+        }
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-navy-950 text-slate-200 antialiased">
+
+    <!-- Nav -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 p-4">
+        <div id="nav-container" class="mx-auto max-w-7xl rounded-2xl border border-transparent transition-all duration-300">
+            <div class="px-6 py-4 flex justify-between items-center">
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <img src="images/image1.png" alt="Ninja Motion" class="h-10 w-auto transition-transform group-hover:scale-105">
+                    <span class="font-display font-bold text-xl text-white tracking-wide hidden sm:block">NINJA <span class="text-sky-500">MOTION</span></span>
+                </a>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="index.html" class="text-slate-300 hover:text-white text-sm font-semibold tracking-wide transition-colors">Home</a>
+                    <a href="about.html" class="text-slate-300 hover:text-white text-sm font-semibold tracking-wide transition-colors">About</a>
+                    <a href="services.html" class="text-slate-300 hover:text-white text-sm font-semibold tracking-wide transition-colors">Services</a>
+                    <a href="conditions.html" class="text-sky-400 text-sm font-semibold tracking-wide transition-colors">Conditions</a>
+                    <a href="education.html" class="text-slate-300 hover:text-white text-sm font-semibold tracking-wide transition-colors">Education</a>
+                    <a href="contact.html" class="bg-sky-600 hover:bg-sky-500 text-white px-5 py-2.5 rounded-xl font-semibold transition-all shadow-lg flex items-center gap-2">
+                        <i data-lucide="phone" class="w-4 h-4"></i><span>Book Now</span>
+                    </a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-white p-2"><i data-lucide="menu" class="w-6 h-6"></i></button>
+            </div>
+            <div id="mobile-menu" class="hidden md:hidden border-t border-white/10 px-6 py-4 space-y-4 bg-navy-950/95 backdrop-blur-md rounded-b-2xl">
+                <a href="index.html" class="block text-lg font-medium text-slate-300">Home</a>
+                <a href="about.html" class="block text-lg font-medium text-slate-300">About</a>
+                <a href="services.html" class="block text-lg font-medium text-slate-300">Services</a>
+                <a href="conditions.html" class="block text-lg font-medium text-sky-400">Conditions</a>
+                <a href="education.html" class="block text-lg font-medium text-slate-300">Education</a>
+                <a href="contact.html" class="block w-full text-center bg-sky-600 text-white py-3 rounded-xl font-bold mt-4">Book Appointment</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="pt-32 pb-20">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h1 class="font-display font-bold text-4xl text-white mb-6">Conditions We Treat</h1>
+          <p class="text-slate-400">From athletes to office workers, we treat the source of your pain.</p>
+        </div>
+
+        <!-- Tabs -->
+        <div class="flex flex-wrap justify-center gap-4 mb-12" id="tabs-container">
+          <button onclick="switchTab('upper')" id="tab-upper" class="tab-btn px-6 py-3 rounded-full font-semibold transition-all bg-sky-600 text-white shadow-lg">Upper Body</button>
+          <button onclick="switchTab('lower')" id="tab-lower" class="tab-btn px-6 py-3 rounded-full font-semibold transition-all bg-white/5 text-slate-400 hover:text-white hover:bg-white/10">Lower Body</button>
+          <button onclick="switchTab('core')" id="tab-core" class="tab-btn px-6 py-3 rounded-full font-semibold transition-all bg-white/5 text-slate-400 hover:text-white hover:bg-white/10">Spine & Core</button>
+          <button onclick="switchTab('sports')" id="tab-sports" class="tab-btn px-6 py-3 rounded-full font-semibold transition-all bg-white/5 text-slate-400 hover:text-white hover:bg-white/10">Sports Specific</button>
+        </div>
+
+        <!-- Content -->
+        <div id="content-upper" class="tab-content grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-navy-900 border border-white/5 p-6 rounded-2xl">
+                <h3 class="text-xl font-display font-bold text-white mb-4">Shoulder Pain</h3>
+                <div class="mb-4"><span class="text-xs uppercase text-slate-500 font-bold tracking-wider">Symptoms</span>
+                <ul class="mt-2 space-y-1"><li class="text-slate-300 text-sm flex items-center gap-2"><span class="w-1 h-1 bg-sky-500 rounded-full"></span> Pain reaching overhead</li><li class="text-slate-300 text-sm flex items-center gap-2"><span class="w-1 h-1 bg-sky-500 rounded-full"></span> Clicking/Popping</li></ul></div>
+                <div><span class="text-xs uppercase text-slate-500 font-bold tracking-wider">Our Approach</span><p class="mt-2 text-sky-400 text-sm">Rotator cuff release and mechanics restoration</p></div>
+            </div>
+            <div class="bg-navy-900 border border-white/5 p-6 rounded-2xl">
+                <h3 class="text-xl font-display font-bold text-white mb-4">Neck Tension</h3>
+                <div class="mb-4"><span class="text-xs uppercase text-slate-500 font-bold tracking-wider">Symptoms</span>
+                <ul class="mt-2 space-y-1"><li class="text-slate-300 text-sm flex items-center gap-2"><span class="w-1 h-1 bg-sky-500 rounded-full"></span> Headaches</li><li class="text-slate-300 text-sm flex items-center gap-2"><span class="w-1 h-1 bg-sky-500 rounded-full"></span> Stiffness</li></ul></div>
+                <div><span class="text-xs uppercase text-slate-500 font-bold tracking-wider">Our Approach</span><p class="mt-2 text-sky-400 text-sm">Trigger point reduction and posture correction</p></div>
+            </div>
+             <div class="bg-navy-900 border border-white/5 p-6 rounded-2xl">
+                <h3 class="text-xl font-display font-bold text-white mb-4">Tennis Elbow</h3>
+                <div class="mb-4"><span class="text-xs uppercase text-slate-500 font-bold tracking-wider">Symptoms</span>
+                <ul class="mt-2 space-y-1"><li class="text-slate-300 text-sm flex items-center gap-2"><span class="w-1 h-1 bg-sky-500 rounded-full"></span> Outer elbow pain</li><li class="text-slate-300 text-sm flex items-center gap-2"><span class="w-1 h-1 bg-sky-500 rounded-full"></span> Weak grip</li></ul></div>
+                <div><span class="text-xs uppercase text-slate-500 font-bold tracking-wider">Our Approach</span><p class="mt-2 text-sky-400 text-sm">Tendon inflammation reduction and scar tissue breakdown</p></div>
+            </div>
+        </div>
+
+        <div id="content-lower" class="tab-content hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-navy-900 border border-white/5 p-6 rounded-2xl">
+                <h3 class="text-xl font-display font-bold text-white mb-4">Hip Mobility</h3>
+                <div class="mb-4"><span class="text-xs uppercase text-slate-500 font-bold tracking-wider">Symptoms</span>
+                <ul class="mt-2 space-y-1"><li class="text-slate-300 text-sm flex items-center gap-2"><span class="w-1 h-1 bg-sky-500 rounded-full"></span> Limited flexion</li><li class="text-slate-300 text-sm flex items-center gap-2"><span class="w-1 h-1 bg-sky-500 rounded-full"></span> Squatting difficulty</li></ul></div>
+                <div><span class="text-xs uppercase text-slate-500 font-bold tracking-wider">Our Approach</span><p class="mt-2 text-sky-400 text-sm">Hip flexor/glute release and movement correction</p></div>
+            </div>
+            <div class="bg-navy-900 border border-white/5 p-6 rounded-2xl">
+                <h3 class="text-xl font-display font-bold text-white mb-4">Knee Pain</h3>
+                <div class="mb-4"><span class="text-xs uppercase text-slate-500 font-bold tracking-wider">Symptoms</span>
+                <ul class="mt-2 space-y-1"><li class="text-slate-300 text-sm flex items-center gap-2"><span class="w-1 h-1 bg-sky-500 rounded-full"></span> Patellar tracking issues</li><li class="text-slate-300 text-sm flex items-center gap-2"><span class="w-1 h-1 bg-sky-500 rounded-full"></span> Swelling</li></ul></div>
+                <div><span class="text-xs uppercase text-slate-500 font-bold tracking-wider">Our Approach</span><p class="mt-2 text-sky-400 text-sm">Quad/Hamstring balance and mechanical support</p></div>
+            </div>
+             <div class="bg-navy-900 border border-white/5 p-6 rounded-2xl">
+                <h3 class="text-xl font-display font-bold text-white mb-4">Plantar Fasciitis</h3>
+                <div class="mb-4"><span class="text-xs uppercase text-slate-500 font-bold tracking-wider">Symptoms</span>
+                <ul class="mt-2 space-y-1"><li class="text-slate-300 text-sm flex items-center gap-2"><span class="w-1 h-1 bg-sky-500 rounded-full"></span> Heel pain</li><li class="text-slate-300 text-sm flex items-center gap-2"><span class="w-1 h-1 bg-sky-500 rounded-full"></span> Morning stiffness</li></ul></div>
+                <div><span class="text-xs uppercase text-slate-500 font-bold tracking-wider">Our Approach</span><p class="mt-2 text-sky-400 text-sm">Calf release and plantar fascia therapy</p></div>
+            </div>
+        </div>
+
+        <div id="content-core" class="tab-content hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-navy-900 border border-white/5 p-6 rounded-2xl">
+                <h3 class="text-xl font-display font-bold text-white mb-4">Lower Back Pain</h3>
+                <div class="mb-4"><span class="text-xs uppercase text-slate-500 font-bold tracking-wider">Symptoms</span>
+                <ul class="mt-2 space-y-1"><li class="text-slate-300 text-sm flex items-center gap-2"><span class="w-1 h-1 bg-sky-500 rounded-full"></span> Dull ache</li><li class="text-slate-300 text-sm flex items-center gap-2"><span class="w-1 h-1 bg-sky-500 rounded-full"></span> Morning stiffness</li></ul></div>
+                <div><span class="text-xs uppercase text-slate-500 font-bold tracking-wider">Our Approach</span><p class="mt-2 text-sky-400 text-sm">Paraspinal release and core stability work</p></div>
+            </div>
+            <div class="bg-navy-900 border border-white/5 p-6 rounded-2xl">
+                <h3 class="text-xl font-display font-bold text-white mb-4">Sciatica</h3>
+                <div class="mb-4"><span class="text-xs uppercase text-slate-500 font-bold tracking-wider">Symptoms</span>
+                <ul class="mt-2 space-y-1"><li class="text-slate-300 text-sm flex items-center gap-2"><span class="w-1 h-1 bg-sky-500 rounded-full"></span> Radiating leg pain</li><li class="text-slate-300 text-sm flex items-center gap-2"><span class="w-1 h-1 bg-sky-500 rounded-full"></span> Numbness</li></ul></div>
+                <div><span class="text-xs uppercase text-slate-500 font-bold tracking-wider">Our Approach</span><p class="mt-2 text-sky-400 text-sm">Piriformis treatment and nerve decompression</p></div>
+            </div>
+             <div class="bg-navy-900 border border-white/5 p-6 rounded-2xl">
+                <h3 class="text-xl font-display font-bold text-white mb-4">Postural Dysfunction</h3>
+                <div class="mb-4"><span class="text-xs uppercase text-slate-500 font-bold tracking-wider">Symptoms</span>
+                <ul class="mt-2 space-y-1"><li class="text-slate-300 text-sm flex items-center gap-2"><span class="w-1 h-1 bg-sky-500 rounded-full"></span> Rounded shoulders</li><li class="text-slate-300 text-sm flex items-center gap-2"><span class="w-1 h-1 bg-sky-500 rounded-full"></span> Forward head</li></ul></div>
+                <div><span class="text-xs uppercase text-slate-500 font-bold tracking-wider">Our Approach</span><p class="mt-2 text-sky-400 text-sm">Corrective activation and ergonomic advice</p></div>
+            </div>
+        </div>
+
+        <div id="content-sports" class="tab-content hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-navy-900 border border-white/5 p-6 rounded-2xl">
+                <h3 class="text-xl font-display font-bold text-white mb-4">Running Injuries</h3>
+                <div class="mb-4"><span class="text-xs uppercase text-slate-500 font-bold tracking-wider">Symptoms</span>
+                <ul class="mt-2 space-y-1"><li class="text-slate-300 text-sm flex items-center gap-2"><span class="w-1 h-1 bg-sky-500 rounded-full"></span> Shin splints</li><li class="text-slate-300 text-sm flex items-center gap-2"><span class="w-1 h-1 bg-sky-500 rounded-full"></span> Runners knee</li></ul></div>
+                <div><span class="text-xs uppercase text-slate-500 font-bold tracking-wider">Our Approach</span><p class="mt-2 text-sky-400 text-sm">Gait analysis and progressive loading</p></div>
+            </div>
+            <div class="bg-navy-900 border border-white/5 p-6 rounded-2xl">
+                <h3 class="text-xl font-display font-bold text-white mb-4">Weightlifting</h3>
+                <div class="mb-4"><span class="text-xs uppercase text-slate-500 font-bold tracking-wider">Symptoms</span>
+                <ul class="mt-2 space-y-1"><li class="text-slate-300 text-sm flex items-center gap-2"><span class="w-1 h-1 bg-sky-500 rounded-full"></span> Muscle strains</li><li class="text-slate-300 text-sm flex items-center gap-2"><span class="w-1 h-1 bg-sky-500 rounded-full"></span> Joint stress</li></ul></div>
+                <div><span class="text-xs uppercase text-slate-500 font-bold tracking-wider">Our Approach</span><p class="mt-2 text-sky-400 text-sm">Deep tissue recovery and mobility for lifting</p></div>
+            </div>
+             <div class="bg-navy-900 border border-white/5 p-6 rounded-2xl">
+                <h3 class="text-xl font-display font-bold text-white mb-4">CrossFit</h3>
+                <div class="mb-4"><span class="text-xs uppercase text-slate-500 font-bold tracking-wider">Symptoms</span>
+                <ul class="mt-2 space-y-1"><li class="text-slate-300 text-sm flex items-center gap-2"><span class="w-1 h-1 bg-sky-500 rounded-full"></span> Systemic fatigue</li><li class="text-slate-300 text-sm flex items-center gap-2"><span class="w-1 h-1 bg-sky-500 rounded-full"></span> Overuse</li></ul></div>
+                <div><span class="text-xs uppercase text-slate-500 font-bold tracking-wider">Our Approach</span><p class="mt-2 text-sky-400 text-sm">Comprehensive recovery protocols</p></div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+        const navbar = document.getElementById('nav-container');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('bg-navy-950/80', 'backdrop-blur-md', 'border-white/10', 'shadow-lg');
+                navbar.classList.remove('border-transparent');
+            } else {
+                navbar.classList.remove('bg-navy-950/80', 'backdrop-blur-md', 'border-white/10', 'shadow-lg');
+                navbar.classList.add('border-transparent');
+            }
+        });
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Tab Logic
+        function switchTab(id) {
+            // Hide all content
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.getElementById('content-' + id).classList.remove('hidden');
+
+            // Reset buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('bg-sky-600', 'text-white', 'shadow-lg');
+                btn.classList.add('bg-white/5', 'text-slate-400');
+            });
+
+            // Activate button
+            const activeBtn = document.getElementById('tab-' + id);
+            activeBtn.classList.remove('bg-white/5', 'text-slate-400');
+            activeBtn.classList.add('bg-sky-600', 'text-white', 'shadow-lg');
+        }
+    </script>
+</body>
+</html>
