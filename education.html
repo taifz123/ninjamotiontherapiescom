@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Education | Ninja Motion Therapies</title>
-    <link rel="icon" type="image/png" href="images/image1.png" />
+    <link rel="icon" type="image/png" href="images/logofinal.png" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -18,15 +18,94 @@
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Grain texture overlay */
+        body::before {
+          content: '';
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-image: 
+            url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" seed="1" /></filter><rect width="100" height="100" fill="%23000" filter="url(%23noise)" opacity="0.03"/></svg>');
+          pointer-events: none;
+          z-index: 9999;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        /* Glassmorphism enhancement */
+        .glass-premium {
+          background: rgba(11, 17, 32, 0.5);
+          backdrop-filter: blur(16px);
+          -webkit-backdrop-filter: blur(16px);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 1px rgba(255, 255, 255, 0.05);
+        }
+
+        /* Smooth hover transitions */
+        .hover-lift {
+          transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .hover-lift:hover {
+          transform: translateY(-8px);
+          box-shadow: 0 30px 60px rgba(14, 165, 233, 0.2);
+        }
+
+        /* Fade-in on scroll */
+        .fade-in-on-scroll {
+          opacity: 0;
+          transform: translateY(30px);
+          transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in-on-scroll.visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        /* Premium button styles */
+        .btn-premium {
+          position: relative;
+          overflow: hidden;
+          transition: all 0.3s ease;
+        }
+
+        .btn-premium::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+          transition: left 0.5s ease;
+        }
+
+        .btn-premium:hover::before {
+          left: 100%;
+        }
+
+        /* Details styling */
+        details {
+          transition: all 0.3s ease;
+        }
+
+        details[open] {
+          box-shadow: 0 20px 60px rgba(14, 165, 233, 0.15);
+        }
+    </style>
 </head>
-<body class="bg-navy-950 text-slate-200 antialiased">
+<body class="bg-navy-950 text-slate-200 antialiased selection:bg-sky-500 selection:text-white overflow-x-hidden">
 
     <!-- Nav -->
-    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 p-4">
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 p-4 backdrop-blur-sm">
         <div id="nav-container" class="mx-auto max-w-7xl rounded-2xl border border-transparent transition-all duration-300">
             <div class="px-6 py-4 flex justify-between items-center">
                 <a href="index.html" class="flex items-center gap-3 group">
-                    <img src="images/image1.png" alt="Ninja Motion" class="h-10 w-auto transition-transform group-hover:scale-105">
+                    <img src="images/logofinal.png" alt="Ninja Motion" class="h-16 w-auto transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-lg">
                     <span class="font-display font-bold text-xl text-white tracking-wide hidden sm:block">NINJA <span class="text-sky-500">MOTION</span></span>
                 </a>
                 <div class="hidden md:flex items-center gap-8">
@@ -35,11 +114,11 @@
                     <a href="services.html" class="text-slate-300 hover:text-white text-sm font-semibold tracking-wide transition-colors">Services</a>
                     <a href="conditions.html" class="text-slate-300 hover:text-white text-sm font-semibold tracking-wide transition-colors">Conditions</a>
                     <a href="education.html" class="text-sky-400 text-sm font-semibold tracking-wide transition-colors">Education</a>
-                    <a href="contact.html" class="bg-sky-600 hover:bg-sky-500 text-white px-5 py-2.5 rounded-xl font-semibold transition-all shadow-lg flex items-center gap-2">
+                    <a href="contact.html" class="btn-premium bg-gradient-to-r from-sky-600 to-sky-500 hover:from-sky-500 hover:to-sky-400 text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-lg shadow-sky-600/30 hover:shadow-sky-600/50 flex items-center gap-2">
                         <i data-lucide="phone" class="w-4 h-4"></i><span>Book Now</span>
                     </a>
                 </div>
-                <button id="mobile-menu-btn" class="md:hidden text-white p-2"><i data-lucide="menu" class="w-6 h-6"></i></button>
+                <button id="mobile-menu-btn" class="md:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors"><i data-lucide="menu" class="w-6 h-6"></i></button>
             </div>
             <div id="mobile-menu" class="hidden md:hidden border-t border-white/10 px-6 py-4 space-y-4 bg-navy-950/95 backdrop-blur-md rounded-b-2xl">
                 <a href="index.html" class="block text-lg font-medium text-slate-300">Home</a>
@@ -47,67 +126,71 @@
                 <a href="services.html" class="block text-lg font-medium text-slate-300">Services</a>
                 <a href="conditions.html" class="block text-lg font-medium text-slate-300">Conditions</a>
                 <a href="education.html" class="block text-lg font-medium text-sky-400">Education</a>
-                <a href="contact.html" class="block w-full text-center bg-sky-600 text-white py-3 rounded-xl font-bold mt-4">Book Appointment</a>
+                <a href="contact.html" class="block w-full text-center bg-gradient-to-r from-sky-600 to-sky-500 text-white py-3 rounded-xl font-bold mt-4">Book Appointment</a>
             </div>
         </div>
     </nav>
 
-    <div class="pt-32 pb-20">
-      <div class="container mx-auto px-6 max-w-4xl">
-         <div class="text-center mb-16">
-          <div class="inline-flex items-center justify-center w-16 h-16 bg-sky-500/10 rounded-full mb-6 text-sky-500">
-            <i data-lucide="book-open" class="w-8 h-8"></i>
-          </div>
-          <h1 class="font-display font-bold text-4xl text-white mb-6">Education Hub</h1>
-          <p class="text-slate-400">Knowledge is power. Understand the science behind your recovery.</p>
+    <div class="pt-32 pb-20 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-0 left-1/4 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-sky-600/5 rounded-full blur-3xl"></div>
         </div>
-
-        <div class="space-y-4">
-            <!-- Item 1 -->
-            <details class="group border rounded-2xl bg-navy-950 border-white/10 hover:border-white/20 open:bg-navy-900 open:border-sky-500/50 open:shadow-lg transition-all duration-300" open>
-                <summary class="w-full flex justify-between items-center p-6 text-left cursor-pointer list-none">
-                    <span class="font-display font-bold text-lg text-white group-open:text-sky-400">Why Sports Massage?</span>
-                    <i data-lucide="chevron-down" class="text-slate-500 group-open:rotate-180 transition-transform"></i>
-                </summary>
-                <div class="px-6 pb-6 text-slate-300 leading-relaxed">
-                    Sports massage helps athletes prevent injuries and enhance performance. It improves flexibility, reduces injury risk by 30%, and lowers cortisol levels. Key techniques include deep tissue, friction, and stretching.
+        <div class="container mx-auto px-6 max-w-4xl relative z-10">
+            <div class="text-center mb-20 fade-in-on-scroll">
+                <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-sky-500/20 to-sky-600/10 rounded-full mb-6 text-sky-400">
+                    <i data-lucide="book-open" class="w-8 h-8"></i>
                 </div>
-            </details>
+                <h1 class="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight">Education Hub</h1>
+                <p class="text-slate-400 text-lg">Knowledge is power. Understand the science behind your recovery.</p>
+            </div>
 
-            <!-- Item 2 -->
-             <details class="group border rounded-2xl bg-navy-950 border-white/10 hover:border-white/20 open:bg-navy-900 open:border-sky-500/50 open:shadow-lg transition-all duration-300">
-                <summary class="w-full flex justify-between items-center p-6 text-left cursor-pointer list-none">
-                    <span class="font-display font-bold text-lg text-white group-open:text-sky-400">Understanding Dry Needling</span>
-                    <i data-lucide="chevron-down" class="text-slate-500 group-open:rotate-180 transition-transform"></i>
-                </summary>
-                <div class="px-6 pb-6 text-slate-300 leading-relaxed">
-                   Dry needling targets muscle trigger points with fine, sterile needles. It creates a 'twitch' response that releases tightness, increases blood flow, and alters pain signals. It is not acupuncture; it is based on Western anatomy.
-                </div>
-            </details>
+            <div class="space-y-4">
+                <!-- Item 1 -->
+                <details class="group glass-premium rounded-2xl hover:border-sky-500/50 transition-all duration-300 open:border-sky-500/50 fade-in-on-scroll" open>
+                    <summary class="w-full flex justify-between items-center p-6 text-left cursor-pointer list-none">
+                        <span class="font-display font-bold text-lg text-white group-open:text-sky-400 transition-colors">Why Sports Massage?</span>
+                        <i data-lucide="chevron-down" class="text-sky-400 group-open:rotate-180 transition-transform duration-300"></i>
+                    </summary>
+                    <div class="px-6 pb-6 text-slate-300 leading-relaxed border-t border-white/5">
+                        Sports massage helps athletes prevent injuries and enhance performance. It improves flexibility, reduces injury risk by 30%, and lowers cortisol levels. Key techniques include deep tissue, friction, and stretching.
+                    </div>
+                </details>
 
-            <!-- Item 3 -->
-             <details class="group border rounded-2xl bg-navy-950 border-white/10 hover:border-white/20 open:bg-navy-900 open:border-sky-500/50 open:shadow-lg transition-all duration-300">
-                <summary class="w-full flex justify-between items-center p-6 text-left cursor-pointer list-none">
-                    <span class="font-display font-bold text-lg text-white group-open:text-sky-400">Benefits of Joint Mobilisation</span>
-                    <i data-lucide="chevron-down" class="text-slate-500 group-open:rotate-180 transition-transform"></i>
-                </summary>
-                <div class="px-6 pb-6 text-slate-300 leading-relaxed">
-                   This manual therapy restores joint motion through graded oscillations. It helps reduce stiffness in the spine, shoulder, and hips, improving synovial fluid production and joint nutrition.
-                </div>
-            </details>
+                <!-- Item 2 -->
+                <details class="group glass-premium rounded-2xl hover:border-sky-500/50 transition-all duration-300 open:border-sky-500/50 fade-in-on-scroll">
+                    <summary class="w-full flex justify-between items-center p-6 text-left cursor-pointer list-none">
+                        <span class="font-display font-bold text-lg text-white group-open:text-sky-400 transition-colors">Understanding Dry Needling</span>
+                        <i data-lucide="chevron-down" class="text-sky-400 group-open:rotate-180 transition-transform duration-300"></i>
+                    </summary>
+                    <div class="px-6 pb-6 text-slate-300 leading-relaxed border-t border-white/5">
+                        Dry needling targets muscle trigger points with fine, sterile needles. It creates a 'twitch' response that releases tightness, increases blood flow, and alters pain signals. It is not acupuncture; it is based on Western anatomy.
+                    </div>
+                </details>
 
-            <!-- Item 4 -->
-             <details class="group border rounded-2xl bg-navy-950 border-white/10 hover:border-white/20 open:bg-navy-900 open:border-sky-500/50 open:shadow-lg transition-all duration-300">
-                <summary class="w-full flex justify-between items-center p-6 text-left cursor-pointer list-none">
-                    <span class="font-display font-bold text-lg text-white group-open:text-sky-400">Injury Prevention 101</span>
-                    <i data-lucide="chevron-down" class="text-slate-500 group-open:rotate-180 transition-transform"></i>
-                </summary>
-                <div class="px-6 pb-6 text-slate-300 leading-relaxed">
-                   Prevention is better than cure. Consistent massage, proper warm-ups, strength training, and listening to early warning signs (like soreness lasting >48 hours) are crucial for longevity.
-                </div>
-            </details>
+                <!-- Item 3 -->
+                <details class="group glass-premium rounded-2xl hover:border-sky-500/50 transition-all duration-300 open:border-sky-500/50 fade-in-on-scroll">
+                    <summary class="w-full flex justify-between items-center p-6 text-left cursor-pointer list-none">
+                        <span class="font-display font-bold text-lg text-white group-open:text-sky-400 transition-colors">Benefits of Joint Mobilisation</span>
+                        <i data-lucide="chevron-down" class="text-sky-400 group-open:rotate-180 transition-transform duration-300"></i>
+                    </summary>
+                    <div class="px-6 pb-6 text-slate-300 leading-relaxed border-t border-white/5">
+                        This manual therapy restores joint motion through graded oscillations. It helps reduce stiffness in the spine, shoulder, and hips, improving synovial fluid production and joint nutrition.
+                    </div>
+                </details>
+
+                <!-- Item 4 -->
+                <details class="group glass-premium rounded-2xl hover:border-sky-500/50 transition-all duration-300 open:border-sky-500/50 fade-in-on-scroll">
+                    <summary class="w-full flex justify-between items-center p-6 text-left cursor-pointer list-none">
+                        <span class="font-display font-bold text-lg text-white group-open:text-sky-400 transition-colors">Injury Prevention 101</span>
+                        <i data-lucide="chevron-down" class="text-sky-400 group-open:rotate-180 transition-transform duration-300"></i>
+                    </summary>
+                    <div class="px-6 pb-6 text-slate-300 leading-relaxed border-t border-white/5">
+                        Prevention is better than cure. Consistent massage, proper warm-ups, strength training, and listening to early warning signs (like soreness lasting >48 hours) are crucial for longevity.
+                    </div>
+                </details>
+            </div>
         </div>
-      </div>
     </div>
 
     <script>
@@ -124,6 +207,25 @@
         });
         document.getElementById('mobile-menu-btn').addEventListener('click', () => {
             document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Intersection Observer for Fade-in on Scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-on-scroll').forEach(el => {
+            observer.observe(el);
         });
     </script>
 </body>
