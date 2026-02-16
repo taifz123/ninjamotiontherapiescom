@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ninja Motion Therapies | Elite Sports & Remedial Massage</title>
-    <link rel="icon" type="image/png" href="images/nmnfinal.png" />
+    <link rel="icon" type="image/png" href="images/finallogo.png" />
+    <meta name="description" content="Ninja Motion Therapies offers elite sports and remedial massage. Optimized recovery and precision performance for athletes and active individuals." />
+    <meta name="keywords" content="sports massage, remedial massage, recovery, dry needling, mobility, performance" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -17,6 +19,8 @@
               fire: { 500: '#ff6b35', 600: '#ff5722' }
             },
             animation: {
+              'slide-in-left': 'slideInLeft 0.6s ease-out',
+              'slide-in-right': 'slideInRight 0.6s ease-out',
               'fade-in-up': 'fadeInUp 0.8s ease-out',
               'float': 'float 3s ease-in-out infinite',
               'glow-pulse': 'glowPulse 2s ease-in-out infinite',
@@ -35,6 +39,14 @@
                 '0%, 100%': { boxShadow: '0 0 20px rgba(255, 107, 53, 0.3)' },
                 '50%': { boxShadow: '0 0 40px rgba(255, 107, 53, 0.6)' },
               },
+              slideInLeft: {
+                '0%': { opacity: '0', transform: 'translateX(-50px)' },
+                '100%': { opacity: '1', transform: 'translateX(0)' },
+              },
+              slideInRight: {
+                '0%': { opacity: '0', transform: 'translateX(50px)' },
+                '100%': { opacity: '1', transform: 'translateX(0)' },
+              },
               shimmer: {
                 '0%': { backgroundPosition: '-1000px 0' },
                 '100%': { backgroundPosition: '1000px 0' },
@@ -43,6 +55,8 @@
             boxShadow: {
               'premium': '0 20px 60px rgba(0, 0, 0, 0.3), 0 0 1px rgba(255, 255, 255, 0.1) inset',
               'neon': '0 0 30px rgba(255, 107, 53, 0.4), 0 0 60px rgba(14, 165, 233, 0.2)',
+              'glow-fire': '0 0 40px rgba(255, 107, 53, 0.5), 0 0 80px rgba(255, 107, 53, 0.3)',
+              'glow-sky': '0 0 40px rgba(14, 165, 233, 0.5), 0 0 80px rgba(14, 165, 233, 0.3)',
             }
           }
         }
@@ -195,7 +209,7 @@
         <div id="nav-container" class="mx-auto max-w-7xl rounded-2xl border border-transparent transition-all duration-300">
             <div class="px-6 py-4 flex justify-between items-center">
                 <a href="index.html" class="flex items-center gap-3 group">
-                    <img src="images/nmnfinal.png" alt="Ninja Motion" class="h-20 w-auto transition-all duration-300 group-hover:scale-125 group-hover:drop-shadow-2xl group-hover:glow-pulse">
+                    <img src="images/finallogo.png" alt="Ninja Motion" class="h-16 md:h-20 w-auto transition-all duration-300 group-hover:scale-110">
                     <div class="hidden sm:block">
                         <span class="font-display font-black text-2xl text-white tracking-tight block leading-tight">NINJA <span class="text-gradient">MOTION</span></span>
                         <span class="text-xs text-sky-400 font-semibold tracking-widest">ELITE RECOVERY</span>
@@ -236,19 +250,19 @@
         <div class="container mx-auto px-6 relative z-10">
             <div class="max-w-4xl mx-auto text-center fade-in-on-scroll">
                 <div class="inline-flex items-center justify-center mb-8">
-                    <img src="images/nmnfinal.png" alt="Ninja Motion" class="h-40 w-auto animate-float drop-shadow-2xl">
+                    <img src="images/finallogo.png" alt="Ninja Motion" class="h-40 md:h-56 w-auto animate-float drop-shadow-2xl">
                 </div>
-                <h1 class="font-display font-black text-5xl md:text-7xl lg:text-8xl text-white mb-8 leading-tight">
+                <h1 class="font-display font-black text-4xl md:text-7xl lg:text-8xl text-white mb-6 md:mb-8 leading-tight">
                     NINJA <span class="text-gradient">MOTION</span>
                 </h1>
-                <p class="text-xl md:text-2xl text-slate-300 mb-8 max-w-2xl mx-auto leading-relaxed">
-                    Elite Sports & Remedial Massage Therapy. Engineered Recovery. Precision Performance.
+                <p class="text-lg md:text-2xl text-slate-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+                    Elite Sports & Remedial Massage. Optimized Recovery. Precision Performance.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-6 justify-center">
-                    <a href="contact.html" class="btn-premium bg-gradient-to-r from-fire-500 via-fire-600 to-fire-500 hover:from-fire-600 hover:to-fire-500 text-white px-8 py-4 rounded-xl font-bold transition-all shadow-lg shadow-fire-500/50 hover:shadow-fire-500/80 text-lg flex items-center justify-center gap-2">
+                    <a href="contact.html" class="btn-premium bg-gradient-to-r from-fire-500 via-fire-600 to-fire-500 hover:from-fire-600 hover:to-fire-500 text-white px-6 py-4 md:px-8 md:py-4 rounded-xl font-bold transition-all shadow-lg shadow-fire-500/50 hover:shadow-fire-500/80 text-base md:text-lg flex items-center justify-center gap-2">
                         <i data-lucide="zap" class="w-5 h-5"></i>Book Your Recovery
                     </a>
-                    <a href="services.html" class="glass-premium px-8 py-4 rounded-xl font-bold transition-all hover:border-sky-500/50 text-lg flex items-center justify-center gap-2">
+                    <a href="services.html" class="glass-premium px-6 py-4 md:px-8 md:py-4 rounded-xl font-bold transition-all hover:border-sky-500/50 text-base md:text-lg flex items-center justify-center gap-2">
                         <i data-lucide="arrow-right" class="w-5 h-5"></i>Explore Services
                     </a>
                 </div>
@@ -266,28 +280,28 @@
         <div class="container mx-auto px-6 relative z-10">
             <div class="text-center mb-20 fade-in-on-scroll">
                 <h2 class="font-display font-black text-4xl md:text-5xl text-white mb-6">Why Choose Ninja Motion?</h2>
-                <p class="text-slate-400 text-lg max-w-2xl mx-auto">Precision-engineered recovery for athletes and active individuals</p>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto">Advanced recovery for athletes and active individuals</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="glass-premium p-8 rounded-2xl hover-lift fade-in-on-scroll stagger-1">
-                    <div class="w-16 h-16 bg-gradient-to-br from-fire-500/30 to-fire-600/10 rounded-2xl flex items-center justify-center text-fire-500 mb-6">
+                <div class="glass-premium p-8 rounded-2xl hover-lift fade-in-on-scroll stagger-1 group border border-white/5 hover:border-fire-500/30 transition-all duration-500">
+                    <div class="w-16 h-16 bg-gradient-to-br from-fire-500/30 to-fire-600/10 rounded-2xl flex items-center justify-center text-fire-500 mb-6 group-hover:shadow-glow-fire group-hover:scale-110 transition-all duration-300">
                         <i data-lucide="zap" class="w-8 h-8"></i>
                     </div>
                     <h3 class="font-display font-bold text-2xl text-white mb-4">Advanced Techniques</h3>
                     <p class="text-slate-400 leading-relaxed">Deep tissue, dry needling, and joint mobilisation backed by modern sports science.</p>
                 </div>
 
-                <div class="glass-premium p-8 rounded-2xl hover-lift fade-in-on-scroll stagger-2">
-                    <div class="w-16 h-16 bg-gradient-to-br from-sky-500/30 to-sky-600/10 rounded-2xl flex items-center justify-center text-sky-400 mb-6">
+                <div class="glass-premium p-8 rounded-2xl hover-lift fade-in-on-scroll stagger-2 group border border-white/5 hover:border-sky-500/30 transition-all duration-500">
+                    <div class="w-16 h-16 bg-gradient-to-br from-sky-500/30 to-sky-600/10 rounded-2xl flex items-center justify-center text-sky-400 mb-6 group-hover:shadow-glow-sky group-hover:scale-110 transition-all duration-300">
                         <i data-lucide="target" class="w-8 h-8"></i>
                     </div>
                     <h3 class="font-display font-bold text-2xl text-white mb-4">Results-Driven</h3>
-                    <p class="text-slate-400 leading-relaxed">Measurable improvements in pain, mobility, and athletic performance.</p>
+                    <p class="text-slate-400 leading-relaxed">Measurable improvements in remedial recovery, mobility, and athletic performance.</p>
                 </div>
 
-                <div class="glass-premium p-8 rounded-2xl hover-lift fade-in-on-scroll stagger-3">
-                    <div class="w-16 h-16 bg-gradient-to-br from-fire-500/30 to-sky-500/10 rounded-2xl flex items-center justify-center text-fire-500 mb-6">
+                <div class="glass-premium p-8 rounded-2xl hover-lift fade-in-on-scroll stagger-3 group border border-white/5 hover:border-fire-500/30 transition-all duration-500">
+                    <div class="w-16 h-16 bg-gradient-to-br from-fire-500/30 to-sky-500/10 rounded-2xl flex items-center justify-center text-fire-500 mb-6 group-hover:shadow-glow-fire group-hover:scale-110 transition-all duration-300">
                         <i data-lucide="award" class="w-8 h-8"></i>
                     </div>
                     <h3 class="font-display font-bold text-2xl text-white mb-4">Expert Care</h3>
@@ -311,7 +325,7 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="group glass-premium p-8 rounded-2xl hover-lift fade-in-on-scroll stagger-1 relative overflow-hidden">
+                <div class="group glass-premium p-8 rounded-2xl hover-lift fade-in-on-scroll stagger-1 relative overflow-hidden border border-white/5 hover:border-fire-500/40 transition-all duration-500">
                     <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity text-fire-500">
                         <i data-lucide="activity" class="w-32 h-32"></i>
                     </div>
@@ -325,7 +339,7 @@
                     </div>
                 </div>
 
-                <div class="group glass-premium p-8 rounded-2xl hover-lift fade-in-on-scroll stagger-2 relative overflow-hidden">
+                <div class="group glass-premium p-8 rounded-2xl hover-lift fade-in-on-scroll stagger-2 relative overflow-hidden border border-white/5 hover:border-sky-500/40 transition-all duration-500">
                     <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity text-sky-500">
                         <i data-lucide="zap" class="w-32 h-32"></i>
                     </div>
@@ -334,12 +348,12 @@
                             <i data-lucide="zap" class="w-7 h-7"></i>
                         </div>
                         <h3 class="font-display font-bold text-2xl text-white mb-4">Dry Needling</h3>
-                        <p class="text-slate-400 mb-6">Trigger point therapy for rapid pain relief and healing.</p>
+                        <p class="text-slate-400 mb-6">Trigger point therapy for rapid remedial relief and healing.</p>
                         <a href="services.html" class="text-sky-400 font-semibold hover:text-sky-300 transition-colors flex items-center gap-2">Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
                     </div>
                 </div>
 
-                <div class="group glass-premium p-8 rounded-2xl hover-lift fade-in-on-scroll stagger-3 relative overflow-hidden">
+                <div class="group glass-premium p-8 rounded-2xl hover-lift fade-in-on-scroll stagger-3 relative overflow-hidden border border-white/5 hover:border-sky-500/40 transition-all duration-500">
                     <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity text-sky-500">
                         <i data-lucide="layers" class="w-32 h-32"></i>
                     </div>
@@ -348,12 +362,12 @@
                             <i data-lucide="layers" class="w-7 h-7"></i>
                         </div>
                         <h3 class="font-display font-bold text-2xl text-white mb-4">Remedial Massage</h3>
-                        <p class="text-slate-400 mb-6">Therapeutic treatment for injury recovery and pain management.</p>
+                        <p class="text-slate-400 mb-6">Therapeutic care for injury recovery and remedial management.</p>
                         <a href="services.html" class="text-sky-400 font-semibold hover:text-sky-300 transition-colors flex items-center gap-2">Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
                     </div>
                 </div>
 
-                <div class="group glass-premium p-8 rounded-2xl hover-lift fade-in-on-scroll stagger-4 relative overflow-hidden">
+                <div class="group glass-premium p-8 rounded-2xl hover-lift fade-in-on-scroll stagger-4 relative overflow-hidden border border-white/5 hover:border-fire-500/40 transition-all duration-500">
                     <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity text-fire-500">
                         <i data-lucide="move" class="w-32 h-32"></i>
                     </div>
@@ -385,10 +399,10 @@
         </div>
 
         <div class="container mx-auto px-6 relative z-10">
-            <div class="glass-premium-light p-12 md:p-16 rounded-3xl text-center fade-in-on-scroll neon-glow">
+            <div class="glass-premium-light p-12 md:p-20 rounded-3xl text-center fade-in-on-scroll neon-glow border border-white/10 hover:border-fire-500/30 transition-all duration-500">
                 <h2 class="font-display font-black text-4xl md:text-5xl text-white mb-6">Ready to Transform Your Recovery?</h2>
                 <p class="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">Book your session today and experience elite-level therapeutic care.</p>
-                <a href="contact.html" class="btn-premium bg-gradient-to-r from-fire-500 via-fire-600 to-fire-500 hover:from-fire-600 hover:to-fire-500 text-white px-10 py-5 rounded-xl font-bold transition-all shadow-lg shadow-fire-500/50 hover:shadow-fire-500/80 inline-flex items-center gap-3 text-lg">
+                <a href="contact.html" class="btn-premium bg-gradient-to-r from-fire-500 via-fire-600 to-fire-500 hover:from-fire-600 hover:to-fire-500 text-white px-12 py-6 rounded-xl font-bold transition-all shadow-lg shadow-fire-500/50 hover:shadow-glow-fire hover:scale-105 inline-flex items-center gap-3 text-lg">
                     <i data-lucide="calendar" class="w-6 h-6"></i>Book Your Appointment Now
                 </a>
             </div>
@@ -404,7 +418,7 @@
         <div class="container mx-auto px-6 relative z-10">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
                 <div>
-                    <img src="images/nmnfinal.png" alt="Ninja Motion" class="h-16 w-auto mb-4">
+                    <img src="images/finallogo.png" alt="Ninja Motion" class="h-16 md:h-20 w-auto mb-4">
                     <p class="text-slate-400 text-sm">Elite sports and remedial massage therapy.</p>
                 </div>
                 <div>
@@ -434,7 +448,7 @@
             </div>
 
             <div class="border-t border-white/10 pt-8 text-center text-slate-400 text-sm">
-                <p>&copy; 2024 Ninja Motion Therapies. All rights reserved. | <a href="#" class="hover:text-white transition-colors">Privacy Policy</a></p>
+                <p>&copy; 2026 Ninja Motion Therapies. All rights reserved. | <a href="#" class="hover:text-white transition-colors">Privacy Policy</a></p>
             </div>
         </div>
     </footer>
