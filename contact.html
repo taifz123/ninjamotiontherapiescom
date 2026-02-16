@@ -4,22 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact | Ninja Motion Therapies</title>
-    <link rel="icon" type="image/png" href="images/logofinal.png" />
+    <link rel="icon" type="image/png" href="images/nmnfinal.png" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
         theme: {
           extend: {
             fontFamily: { sans: ['Open Sans', 'sans-serif'], display: ['Poppins', 'sans-serif'] },
-            colors: { navy: { 950: '#0B1120', 900: '#111827' }, sky: { 500: '#0ea5e9', 600: '#0284c7' } }
+            colors: { 
+              navy: { 950: '#0B1120', 900: '#111827' }, 
+              sky: { 500: '#0ea5e9', 600: '#0284c7' },
+              fire: { 500: '#ff6b35', 600: '#ff5722' }
+            }
           }
         }
       }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        /* Grain texture overlay */
         body::before {
           content: '';
           position: fixed;
@@ -28,36 +31,40 @@
           width: 100%;
           height: 100%;
           background-image: 
-            url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" seed="1" /></filter><rect width="100" height="100" fill="%23000" filter="url(%23noise)" opacity="0.03"/></svg>');
+            url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" seed="1" /></filter><rect width="100" height="100" fill="%23000" filter="url(%23noise)" opacity="0.02"/></svg>');
           pointer-events: none;
           z-index: 9999;
         }
 
         html { scroll-behavior: smooth; }
 
-        /* Glassmorphism enhancement */
         .glass-premium {
-          background: rgba(11, 17, 32, 0.5);
-          backdrop-filter: blur(16px);
-          -webkit-backdrop-filter: blur(16px);
-          border: 1px solid rgba(255, 255, 255, 0.08);
-          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 1px rgba(255, 255, 255, 0.05);
+          background: rgba(11, 17, 32, 0.6);
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15), inset 0 1px 1px rgba(255, 255, 255, 0.08);
         }
 
-        /* Smooth hover transitions */
         .hover-lift {
           transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         .hover-lift:hover {
-          transform: translateY(-8px);
-          box-shadow: 0 30px 60px rgba(14, 165, 233, 0.2);
+          transform: translateY(-12px);
+          box-shadow: 0 30px 80px rgba(14, 165, 233, 0.3);
         }
 
-        /* Fade-in on scroll */
+        .text-gradient {
+          background: linear-gradient(135deg, #ff6b35 0%, #ff8c5a 50%, #0ea5e9 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+
         .fade-in-on-scroll {
           opacity: 0;
-          transform: translateY(30px);
+          transform: translateY(40px);
           transition: opacity 0.8s ease, transform 0.8s ease;
         }
 
@@ -66,7 +73,6 @@
           transform: translateY(0);
         }
 
-        /* Premium button styles */
         .btn-premium {
           position: relative;
           overflow: hidden;
@@ -80,34 +86,27 @@
           left: -100%;
           width: 100%;
           height: 100%;
-          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
           transition: left 0.5s ease;
         }
 
         .btn-premium:hover::before {
           left: 100%;
         }
-
-        /* Icon box enhancement */
-        .icon-box {
-          transition: all 0.3s ease;
-        }
-
-        .icon-box:hover {
-          background: rgba(14, 165, 233, 0.15);
-          border-color: rgba(14, 165, 233, 0.4);
-        }
     </style>
 </head>
-<body class="bg-navy-950 text-slate-200 antialiased selection:bg-sky-500 selection:text-white overflow-x-hidden">
+<body class="bg-navy-950 text-slate-200 antialiased selection:bg-fire-500 selection:text-white overflow-x-hidden">
 
     <!-- Nav -->
     <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 p-4 backdrop-blur-sm">
         <div id="nav-container" class="mx-auto max-w-7xl rounded-2xl border border-transparent transition-all duration-300">
             <div class="px-6 py-4 flex justify-between items-center">
                 <a href="index.html" class="flex items-center gap-3 group">
-                    <img src="images/logofinal.png" alt="Ninja Motion" class="h-16 w-auto transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-lg">
-                    <span class="font-display font-bold text-xl text-white tracking-wide hidden sm:block">NINJA <span class="text-sky-500">MOTION</span></span>
+                    <img src="images/nmnfinal.png" alt="Ninja Motion" class="h-20 w-auto transition-all duration-300 group-hover:scale-125 group-hover:drop-shadow-2xl">
+                    <div class="hidden sm:block">
+                        <span class="font-display font-black text-2xl text-white tracking-tight block leading-tight">NINJA <span class="text-gradient">MOTION</span></span>
+                        <span class="text-xs text-sky-400 font-semibold tracking-widest">ELITE RECOVERY</span>
+                    </div>
                 </a>
                 <div class="hidden md:flex items-center gap-8">
                     <a href="index.html" class="text-slate-300 hover:text-white text-sm font-semibold tracking-wide transition-colors">Home</a>
@@ -115,8 +114,7 @@
                     <a href="services.html" class="text-slate-300 hover:text-white text-sm font-semibold tracking-wide transition-colors">Services</a>
                     <a href="conditions.html" class="text-slate-300 hover:text-white text-sm font-semibold tracking-wide transition-colors">Conditions</a>
                     <a href="education.html" class="text-slate-300 hover:text-white text-sm font-semibold tracking-wide transition-colors">Education</a>
-                    <a href="contact.html" class="text-sky-400 text-sm font-semibold tracking-wide transition-colors">Contact</a>
-                    <a href="contact.html" class="btn-premium bg-gradient-to-r from-sky-600 to-sky-500 hover:from-sky-500 hover:to-sky-400 text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-lg shadow-sky-600/30 hover:shadow-sky-600/50 flex items-center gap-2">
+                    <a href="contact.html" class="btn-premium bg-gradient-to-r from-fire-500 via-fire-600 to-fire-500 hover:from-fire-600 hover:to-fire-500 text-white px-7 py-3 rounded-xl font-bold transition-all shadow-lg shadow-fire-500/50 hover:shadow-fire-500/80 flex items-center gap-2">
                         <i data-lucide="phone" class="w-4 h-4"></i><span>Book Now</span>
                     </a>
                 </div>
@@ -128,56 +126,115 @@
                 <a href="services.html" class="block text-lg font-medium text-slate-300">Services</a>
                 <a href="conditions.html" class="block text-lg font-medium text-slate-300">Conditions</a>
                 <a href="education.html" class="block text-lg font-medium text-slate-300">Education</a>
-                <a href="contact.html" class="block text-lg font-medium text-sky-400">Contact</a>
-                <a href="contact.html" class="block w-full text-center bg-gradient-to-r from-sky-600 to-sky-500 text-white py-3 rounded-xl font-bold mt-4">Book Appointment</a>
+                <a href="contact.html" class="block text-lg font-medium text-fire-500">Contact</a>
             </div>
         </div>
     </nav>
 
     <div class="pt-32 pb-20 relative overflow-hidden">
         <div class="absolute inset-0 opacity-20">
-            <div class="absolute top-0 left-1/4 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl"></div>
+            <div class="absolute top-0 left-1/4 w-96 h-96 bg-fire-500/10 rounded-full blur-3xl"></div>
             <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-sky-600/5 rounded-full blur-3xl"></div>
         </div>
         <div class="container mx-auto px-6 relative z-10">
-            <h1 class="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-white text-center mb-20 fade-in-on-scroll leading-tight">Get In Touch</h1>
+            <div class="text-center mb-20 fade-in-on-scroll">
+                <h1 class="font-display font-black text-5xl md:text-6xl lg:text-7xl text-white mb-6 leading-tight">Get in <span class="text-gradient">Touch</span></h1>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto">Ready to start your recovery journey? Reach out today.</p>
+            </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-                <!-- Sidebar Info -->
-                <div class="space-y-8 fade-in-on-scroll">
-                    <div class="glass-premium p-8 rounded-2xl">
-                        <h3 class="font-display font-bold text-xl text-white mb-6">Contact Info</h3>
-                        <ul class="space-y-6">
-                            <li class="flex gap-4 hover-lift">
-                                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-sky-500/20 to-sky-600/10 flex items-center justify-center text-sky-400 shrink-0 icon-box border border-sky-500/20"><i data-lucide="map-pin"></i></div>
-                                <div><h4 class="text-white font-semibold mb-1">Visit Us</h4><p class="text-slate-400 text-sm">100 Jarrett St,<br/>Leichhardt, NSW 2040<br/><span class="text-sky-400 text-xs mt-1 block font-semibold">Inside Olympian Frontiers Gym</span></p></div>
-                            </li>
-                            <li class="flex gap-4 hover-lift">
-                                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-sky-500/20 to-sky-600/10 flex items-center justify-center text-sky-400 shrink-0 icon-box border border-sky-500/20"><i data-lucide="phone"></i></div>
-                                <div><h4 class="text-white font-semibold mb-1">Call Us</h4><a href="tel:0434766414" class="text-slate-400 text-sm hover:text-sky-400 transition-colors font-semibold">0434 766 414</a></div>
-                            </li>
-                            <li class="flex gap-4 hover-lift">
-                                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-sky-500/20 to-sky-600/10 flex items-center justify-center text-sky-400 shrink-0 icon-box border border-sky-500/20"><i data-lucide="clock"></i></div>
-                                <div><h4 class="text-white font-semibold mb-1">Hours</h4><p class="text-slate-400 text-sm">Mon-Sat: By Schedule<br/>Sun: Closed</p></div>
-                            </li>
-                        </ul>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Contact Card 1 -->
+                <div class="glass-premium p-8 rounded-2xl hover-lift fade-in-on-scroll">
+                    <div class="w-14 h-14 bg-gradient-to-br from-fire-500/20 to-fire-600/10 rounded-2xl flex items-center justify-center text-fire-500 mb-6">
+                        <i data-lucide="phone" class="w-7 h-7"></i>
                     </div>
-
-                    <!-- Map -->
-                    <div class="rounded-2xl overflow-hidden glass-premium h-64 hover:border-sky-500/50 transition-all duration-500 fade-in-on-scroll">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.4566710434685!2d151.1554!3d-33.8778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12e4b3c4a00001%3A0x0!2s100%20Jarrett%20St%2C%20Leichhardt%20NSW%202040!5e0!3m2!1sen!2sau!4v1600000000000!5m2!1sen!2sau" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                    </div>
+                    <h3 class="font-display font-bold text-2xl text-white mb-4">Phone</h3>
+                    <p class="text-slate-400 mb-6">Call us to book an appointment or ask any questions.</p>
+                    <a href="tel:0434766414" class="text-fire-500 font-semibold hover:text-fire-400 transition-colors flex items-center gap-2">
+                        0434 766 414 <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
                 </div>
 
-                <!-- Booking Frame -->
-                <div class="lg:col-span-2 fade-in-on-scroll">
-                    <div class="glass-premium rounded-2xl overflow-hidden shadow-premium">
-                        <iframe id='cliniko-7112282' src='https://ninja-motion-therapies.au4.cliniko.com/bookings?embedded=true' width='100%' height='1000' style="border:0; display:block"></iframe>
+                <!-- Contact Card 2 -->
+                <div class="glass-premium p-8 rounded-2xl hover-lift fade-in-on-scroll">
+                    <div class="w-14 h-14 bg-gradient-to-br from-sky-500/20 to-sky-600/10 rounded-2xl flex items-center justify-center text-sky-400 mb-6">
+                        <i data-lucide="map-pin" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-2xl text-white mb-4">Location</h3>
+                    <p class="text-slate-400 mb-6">Inside Olympian Frontiers Gym in Leichhardt.</p>
+                    <p class="text-sky-300 font-semibold">Leichhardt, NSW 2040</p>
+                </div>
+
+                <!-- Contact Card 3 -->
+                <div class="glass-premium p-8 rounded-2xl hover-lift fade-in-on-scroll">
+                    <div class="w-14 h-14 bg-gradient-to-br from-fire-500/20 to-fire-600/10 rounded-2xl flex items-center justify-center text-fire-500 mb-6">
+                        <i data-lucide="clock" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="font-display font-bold text-2xl text-white mb-4">Hours</h3>
+                    <p class="text-slate-400 mb-6">Available by appointment.</p>
+                    <div class="space-y-2 text-fire-300">
+                        <p><strong>Monday - Saturday:</strong> By Schedule</p>
+                        <p><strong>Sunday:</strong> Closed</p>
                     </div>
                 </div>
             </div>
+
+            <!-- Booking Section -->
+            <div class="glass-premium p-12 md:p-16 rounded-3xl text-center fade-in-on-scroll">
+                <h2 class="font-display font-black text-3xl md:text-4xl text-white mb-6">Ready to Book?</h2>
+                <p class="text-slate-300 text-lg mb-10 max-w-2xl mx-auto">
+                    Click the button below to schedule your appointment. Choose your preferred service and time slot.
+                </p>
+                <a href="https://www.acuityscheduling.com/schedule.php?owner=21906932" target="_blank" class="btn-premium bg-gradient-to-r from-fire-500 via-fire-600 to-fire-500 hover:from-fire-600 hover:to-fire-500 text-white px-10 py-5 rounded-xl font-bold transition-all shadow-lg shadow-fire-500/50 hover:shadow-fire-500/80 inline-flex items-center gap-3 text-lg">
+                    <i data-lucide="calendar" class="w-6 h-6"></i>Book Your Appointment
+                </a>
+            </div>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 py-12 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute bottom-0 left-1/4 w-96 h-96 bg-sky-500/5 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <img src="images/nmnfinal.png" alt="Ninja Motion" class="h-16 w-auto mb-4">
+                    <p class="text-slate-400 text-sm">Elite sports and remedial massage therapy.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-slate-400 text-sm">
+                        <li><a href="about.html" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="services.html" class="hover:text-white transition-colors">Services</a></li>
+                        <li><a href="education.html" class="hover:text-white transition-colors">Education</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white mb-4">Contact</h4>
+                    <ul class="space-y-2 text-slate-400 text-sm">
+                        <li><a href="tel:0434766414" class="hover:text-white transition-colors">0434 766 414</a></li>
+                        <li>Leichhardt, NSW 2040</li>
+                        <li>Inside Olympian Frontiers Gym</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white mb-4">Hours</h4>
+                    <ul class="space-y-2 text-slate-400 text-sm">
+                        <li>Mon-Sat: By Schedule</li>
+                        <li>Sun: Closed</li>
+                        <li><a href="#" class="text-fire-500 hover:text-fire-400 transition-colors font-semibold">Book Now</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-8 text-center text-slate-400 text-sm">
+                <p>&copy; 2024 Ninja Motion Therapies. All rights reserved. | <a href="#" class="hover:text-white transition-colors">Privacy Policy</a></p>
+            </div>
+        </div>
+    </footer>
 
     <script>
         lucide.createIcons();
@@ -195,17 +252,6 @@
             document.getElementById('mobile-menu').classList.toggle('hidden');
         });
 
-        // Cliniko Resize
-        window.addEventListener('message', function handleIFrameMessage (e) {
-            var clinikoBookings = document.getElementById('cliniko-7112282');
-            if (typeof e.data !== 'string') return;
-            if (e.data.search('cliniko-bookings-resize') > -1) {
-                var height = Number(e.data.split(':')[1]);
-                clinikoBookings.style.height = height + 'px';
-            }
-        });
-
-        // Intersection Observer for Fade-in on Scroll
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
